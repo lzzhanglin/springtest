@@ -1,6 +1,22 @@
+*.class
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+#package file
+*.jar
+*.war
+*.ear
+#kdiff3 ignore
+*.orig
 
+# tempfiles
+*.log
+*.diff
+*.cache
+*.patch
+*.tmp
+#system ignore
+.DS_Store
+Thumbs.db
 ### STS ###
 .apt_generated
 .classpath
