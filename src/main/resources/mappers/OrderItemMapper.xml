@@ -24,20 +24,20 @@
     select 
     <include refid="Base_Column_List" />
     from mmall_order_item
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from mmall_order_item
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id}
   </delete>
   <insert id="insert" parameterType="com.mmall.pojo.OrderItem" >
     insert into mmall_order_item (id, user_id, order_no, 
       product_id, product_name, product_image, 
       current_unit_price, quantity, total_price, 
       create_time, update_time)
-    values (#{id,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, #{orderNo,jdbcType=BIGINT}, 
-      #{productId,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, #{productImage,jdbcType=VARCHAR}, 
-      #{currentUnitPrice,jdbcType=DECIMAL}, #{quantity,jdbcType=INTEGER}, #{totalPrice,jdbcType=DECIMAL}, 
+    values (#{id}, #{userId}, #{orderNo,jdbcType=BIGINT}, 
+      #{productId}, #{productName,jdbcType=VARCHAR}, #{productImage,jdbcType=VARCHAR}, 
+      #{currentUnitPrice,jdbcType=DECIMAL}, #{quantity}, #{totalPrice,jdbcType=DECIMAL}, 
       now(), now())
   </insert>
   <insert id="insertSelective" parameterType="com.mmall.pojo.OrderItem" >
@@ -79,16 +79,16 @@
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
-        #{id,jdbcType=INTEGER},
+        #{id},
       </if>
       <if test="userId != null" >
-        #{userId,jdbcType=INTEGER},
+        #{userId},
       </if>
       <if test="orderNo != null" >
         #{orderNo,jdbcType=BIGINT},
       </if>
       <if test="productId != null" >
-        #{productId,jdbcType=INTEGER},
+        #{productId},
       </if>
       <if test="productName != null" >
         #{productName,jdbcType=VARCHAR},
@@ -100,7 +100,7 @@
         #{currentUnitPrice,jdbcType=DECIMAL},
       </if>
       <if test="quantity != null" >
-        #{quantity,jdbcType=INTEGER},
+        #{quantity},
       </if>
       <if test="totalPrice != null" >
         #{totalPrice,jdbcType=DECIMAL},
@@ -117,13 +117,13 @@
     update mmall_order_item
     <set >
       <if test="userId != null" >
-        user_id = #{userId,jdbcType=INTEGER},
+        user_id = #{userId},
       </if>
       <if test="orderNo != null" >
         order_no = #{orderNo,jdbcType=BIGINT},
       </if>
       <if test="productId != null" >
-        product_id = #{productId,jdbcType=INTEGER},
+        product_id = #{productId},
       </if>
       <if test="productName != null" >
         product_name = #{productName,jdbcType=VARCHAR},
@@ -135,7 +135,7 @@
         current_unit_price = #{currentUnitPrice,jdbcType=DECIMAL},
       </if>
       <if test="quantity != null" >
-        quantity = #{quantity,jdbcType=INTEGER},
+        quantity = #{quantity},
       </if>
       <if test="totalPrice != null" >
         total_price = #{totalPrice,jdbcType=DECIMAL},
@@ -147,21 +147,21 @@
         update_time = now(),
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.mmall.pojo.OrderItem" >
     update mmall_order_item
-    set user_id = #{userId,jdbcType=INTEGER},
+    set user_id = #{userId},
       order_no = #{orderNo,jdbcType=BIGINT},
-      product_id = #{productId,jdbcType=INTEGER},
+      product_id = #{productId},
       product_name = #{productName,jdbcType=VARCHAR},
       product_image = #{productImage,jdbcType=VARCHAR},
       current_unit_price = #{currentUnitPrice,jdbcType=DECIMAL},
-      quantity = #{quantity,jdbcType=INTEGER},
+      quantity = #{quantity},
       total_price = #{totalPrice,jdbcType=DECIMAL},
       create_time = #{createTime,jdbcType=TIMESTAMP},
       update_time = now()
-    where id = #{id,jdbcType=INTEGER}
+    where id = #{id}
   </update>
 
   <select id="getByOrderNoUserId" resultMap="BaseResultMap" parameterType="map">
@@ -171,6 +171,22 @@
     WHERE order_no = #{orderNo}
     and user_id = #{userId}
   </select>
+
+  <insert id="batchInsert" parameterType="list">
+    insert into mmall_order_item (id, user_id, order_no,
+      product_id, product_name, product_image,
+      current_unit_price, quantity, total_price,
+      create_time, update_time)
+    values
+    <foreach collection="orderItemList" index="index" item="item" separator=",">
+      (
+      #{item.id},#{item.userId},#{item.orderNo},{item.productId}, #{item.productName}, #{item.productImage},
+      #{item.currentUnitPrice}, #{item.quantity}, #{item.totalPrice},
+      now(), now()
+      )
+    </foreach>
+
+  </insert>
 
 
 </mapper>
