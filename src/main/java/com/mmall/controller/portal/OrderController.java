@@ -56,7 +56,7 @@ public class OrderController {
 
     }
 //
-    @RequestMapping("get_Order_Cart_Product.do")
+    @RequestMapping("get_order_cart_product.do")
     @ResponseBody
     public ServerResponse getOrderCartProduct(HttpSession session) {
         User user = (User) session.getAttribute(Const.CURRENT_USER);

@@ -138,17 +138,23 @@ public class OrderServiceImpl implements IOrderService {
 
     private OrderItemVo assembleOrderItemVo(OrderItem orderItem) {
         OrderItemVo orderItemVo = new OrderItemVo();
-        orderItemVo.setOrderNo(orderItem.getOrderNo());
+
+        if (orderItem.getOrderNo() != null) {
+            orderItemVo.setOrderNo(orderItem.getOrderNo());
+        }
         orderItemVo.setProductId(orderItem.getProductId());
         orderItemVo.setProductImage(orderItem.getProductImage());
         orderItemVo.setCurrentUnitPrice(orderItem.getCurrentUnitPrice());
         orderItemVo.setProductName(orderItem.getProductName());
         orderItemVo.setQuantity(orderItem.getQuantity());
         orderItemVo.setTotalPrice(orderItem.getTotalPrice());
+        if (DateTimeUtil.dateToStr(orderItem.getCreateTime()) != null) {
+            orderItemVo.setCreateTime(DateTimeUtil.dateToStr(orderItem.getCreateTime()));
+        }
 
-        orderItemVo.setCreateTime(DateTimeUtil.dateToStr(orderItem.getCreateTime()));
         return orderItemVo;
     }
+
 
 
     private ShippingVo assembleShippingVo(Shipping shipping) {
@@ -213,7 +219,7 @@ public class OrderServiceImpl implements IOrderService {
     private ServerResponse<List<OrderItem>> getCartOrderItem(Integer userId,List<Cart>cartList){
         List<OrderItem> orderItemList = Lists.newArrayList();
         if (CollectionUtils.isEmpty(cartList)) {
-            return ServerResponse.createByErrorMsg("购物车为空！");
+            return ServerResponse.createByErrorMsg("购物车为空!!！");
         }
         //校验购物车数据
         for (Cart cart : cartList) {
@@ -271,7 +277,9 @@ public class OrderServiceImpl implements IOrderService {
         BigDecimal payment = new BigDecimal("0");
         for (OrderItem orderItem : orderItemList) {
             payment = BigDecimalUtil.add(payment.doubleValue(),orderItem.getTotalPrice().doubleValue());
-            orderItemVoList.add(assembleOrderItemVo(orderItem));
+             OrderItemVo testOrderItemVo = assembleOrderItemVo(orderItem);
+             int i =0;
+            orderItemVoList.add(testOrderItemVo);
 
         }
         orderProductVo.setTotalPrice(payment);
