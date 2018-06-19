@@ -187,7 +187,7 @@
     </foreach>
 
   </insert>
-  <select id="getByOrderNo" resultMap="BaseResultMap" parameterType="int">
+  <select id="getByOrderNo" resultMap="BaseResultMap" parameterType="map">
     select
     <include refid="Base_Column_List"/>
     FROM mmall_order_item

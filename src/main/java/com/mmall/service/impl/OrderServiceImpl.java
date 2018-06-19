@@ -219,7 +219,7 @@ public class OrderServiceImpl implements IOrderService {
     private ServerResponse<List<OrderItem>> getCartOrderItem(Integer userId,List<Cart>cartList){
         List<OrderItem> orderItemList = Lists.newArrayList();
         if (CollectionUtils.isEmpty(cartList)) {
-            return ServerResponse.createByErrorMsg("购物车为空!!！");
+            return ServerResponse.createByErrorMsg("购物车为空！");
         }
         //校验购物车数据
         for (Cart cart : cartList) {
@@ -545,7 +545,7 @@ public class OrderServiceImpl implements IOrderService {
         return ServerResponse.createBySuccess(pageResult);
     }
 
-    public ServerResponse<OrderVo> manageDetail(long orderNo) {
+    public ServerResponse<OrderVo> manageDetail(Long orderNo) {
         Order order = orderMapper.selectByOrderNo(orderNo);
         if (order != null) {
             List<OrderItem> orderItemList = orderItemMapper.getByOrderNo(orderNo);
@@ -558,7 +558,7 @@ public class OrderServiceImpl implements IOrderService {
 
 
 
-    public ServerResponse<PageInfo> manageSearch(long orderNo,int pageNum, int pageSize) {
+    public ServerResponse<PageInfo> manageSearch(Long orderNo,int pageNum, int pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         Order order = orderMapper.selectByOrderNo(orderNo);
         if (order != null) {
@@ -575,7 +575,7 @@ public class OrderServiceImpl implements IOrderService {
     }
 
 
-    public ServerResponse<String> manageSendGoods(long orderNo) {
+    public ServerResponse<String> manageSendGoods(Long orderNo) {
         Order order = orderMapper.selectByOrderNo(orderNo);
         if (order != null) {
             if (order.getStatus() == Const.OrderStatusEnum.PAID.getCode()) {
@@ -583,6 +583,9 @@ public class OrderServiceImpl implements IOrderService {
                 order.setSendTime(new Date());
                 orderMapper.updateByPrimaryKeySelective(order);
                 return ServerResponse.createBySuccess("发货成功！");
+            }
+            if (order.getStatus() == Const.OrderStatusEnum.NO_PAY.getCode()) {
+                return ServerResponse.createByErrorMsg("订单还未支付！");
             }
         }
         return ServerResponse.createByErrorMsg("订单不存在！");
