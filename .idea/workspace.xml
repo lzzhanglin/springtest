@@ -8,9 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="21557d7e-8dfe-413e-979a-1406edfe50c8" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mmall/service/IOrderService.java" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/service/IOrderService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mmall/service/impl/OrderServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/mmall/service/impl/OrderServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/OrderItemMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mappers/OrderItemMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,7 +47,7 @@
       <file leaf-file-name="OrderServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mmall/service/impl/OrderServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8923">
+            <state relative-caret-position="25">
               <caret line="221" column="57" lean-forward="false" selection-start-line="221" selection-start-column="57" selection-end-line="221" selection-end-column="57" />
               <folding />
             </state>
@@ -160,6 +157,7 @@
       <find>manageList</find>
       <find>send</find>
       <find>manageSendGoods</find>
+      <find>!!</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -403,21 +401,6 @@
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="mmall" type="462c0819:PsiDirectoryNode" />
               <item name="pojo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mmall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mmall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="mmall" type="b2602c69:ProjectViewProjectNode" />
@@ -851,7 +834,7 @@
       <workItem from="1529233913573" duration="4584000" />
       <workItem from="1529321685857" duration="11345000" />
       <workItem from="1529333416990" duration="49000" />
-      <workItem from="1529374746310" duration="16469000" />
+      <workItem from="1529374746310" duration="18698000" />
     </task>
     <servers />
   </component>
@@ -870,7 +853,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161100000" />
+    <option name="totallyTimeSpent" value="163329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -894,7 +877,7 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15522876" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15522876" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32189542" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24886535" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1867,14 +1850,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="275" column="14" lean-forward="true" selection-start-line="275" selection-start-column="14" selection-end-line="275" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/src/main/webapp/WEB-INF/lib/alipay-trade-sdk-20161215.jar!/com/alipay/demo/trade/service/impl/AlipayTradeWithHBServiceImpl.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -2403,9 +2378,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="14" lean-forward="true" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mmall/service/impl/OrderServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8923">
+        <state relative-caret-position="25">
           <caret line="221" column="57" lean-forward="false" selection-start-line="221" selection-start-column="57" selection-end-line="221" selection-end-column="57" />
           <folding />
         </state>
