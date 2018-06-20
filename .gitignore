@@ -28,3 +28,4 @@ target/
 .Ds_Store
 Thumbs.db
 /src/test/
+/target/
